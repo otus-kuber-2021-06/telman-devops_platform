@@ -8,9 +8,17 @@ spec:
   containers:
     - name: web
       image: registry.hub.docker.com/870414/intro:latest
+      readinessProbe:
+        httpGet:
+          path: /index.html
+          port: 80
+      livenessProbe:
+        tcpSocket:
+          port: 8000
       volumeMounts:
         - name: app
           mountPath: /app
+      resources: {}
   initContainers:
     - name: busybox
       image: busybox:1.31.0
