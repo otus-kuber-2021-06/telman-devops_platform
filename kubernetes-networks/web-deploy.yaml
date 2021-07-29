@@ -31,7 +31,6 @@ spec:
           volumeMounts:
             - name: app
               mountPath: /app
-          resources: {}
       initContainers:
         - name: busybox
           image: busybox:1.31.0
