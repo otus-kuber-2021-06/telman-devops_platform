@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: web
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "a3e9fb0bf36f94df2aafdbb19a8f91ae-1274941855.eu-central-1.elb.amazonaws.com"
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: web-svc
+          servicePort: 80
