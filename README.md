@@ -71,3 +71,11 @@ helm upgrade --install elasticsearch-exporter prometheus-community/prometheus-el
 
 helm upgrade --install loki --namespace=observability helm upgrade --install promtail grafana/promtail --set "loki.serviceName=loki" --namespace=observability
 ```
+
+# Инсталляция hashicorp vault HA в k8s
+
+### Что сделали
+- Установили кластер vault в kubernetes
+- Научились создавать секреты и политики
+- Настроили авторизацию в vault через kubernetes sa
+- Сделали под с контейнером nginx, в который прокинули секреты из vault через consul-template
